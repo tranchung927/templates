@@ -1,0 +1,7 @@
+<templateSet group="user">
+  <template name="internet" value="&lt;!--Cho phép ứng dụng có khả năng kết nối mạng--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;&#10;&#10;&lt;!--Cho phép ứng dụng kiểm tra trạng thái kết nối mạng của điện thoại--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;&#10;" description="Allow connect internet" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
