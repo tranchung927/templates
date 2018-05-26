@@ -4,4 +4,9 @@
       <option name="XML" value="true" />
     </context>
   </template>
+  <template name="checkInternet" value="fun checkInternetConnection(): Boolean {&#10;    val connectivityManager: ConnectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager&#10;    val networkInfo = connectivityManager.activeNetworkInfo&#10;    if (networkInfo == null) {&#10;        Toast.makeText(this, &quot;No default network is currently active&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    if (!networkInfo.isConnected) {&#10;        Toast.makeText(this, &quot;Network is not connected&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    if (!networkInfo.isAvailable) {&#10;        Toast.makeText(this, &quot;Network not available&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    Toast.makeText(this, &quot;Network OK&quot;, Toast.LENGTH_LONG).show()&#10;    return true&#10;}" description="Kiểm tra máy kết nối mạng không" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
 </templateSet>
