@@ -1,5 +1,5 @@
 <templateSet group="user">
-  <template name="internet" value="&lt;!--Cho phép ứng dụng có khả năng kết nối mạng--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;&#10;&#10;&lt;!--Cho phép ứng dụng kiểm tra trạng thái kết nối mạng của điện thoại--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;&#10;" description="Allow connect internet" toReformat="false" toShortenFQNames="true">
+  <template name="allowInternet" value="&lt;!--Cho phép ứng dụng có khả năng kết nối mạng--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.INTERNET&quot;/&gt;&#10;&#10;&lt;!--Cho phép ứng dụng kiểm tra trạng thái kết nối mạng của điện thoại--&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.ACCESS_NETWORK_STATE&quot;/&gt;&#10;" description="Allow connect internet" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="XML" value="true" />
     </context>
@@ -7,6 +7,22 @@
   <template name="checkInternet" value="fun checkInternetConnection(): Boolean {&#10;    val connectivityManager: ConnectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager&#10;    val networkInfo = connectivityManager.activeNetworkInfo&#10;    if (networkInfo == null) {&#10;        Toast.makeText(this, &quot;No default network is currently active&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    if (!networkInfo.isConnected) {&#10;        Toast.makeText(this, &quot;Network is not connected&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    if (!networkInfo.isAvailable) {&#10;        Toast.makeText(this, &quot;Network not available&quot;, Toast.LENGTH_LONG).show()&#10;        return false&#10;    }&#10;    Toast.makeText(this, &quot;Network OK&quot;, Toast.LENGTH_LONG).show()&#10;    return true&#10;}" description="Kiểm tra máy kết nối mạng không" toReformat="true" toShortenFQNames="true">
     <context>
       <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="trycatch" value="try {&#10;    $CODE$&#10;} catch (e: Exception) {&#10;    $CODE$&#10;}" description="" toReformat="true" toShortenFQNames="true">
+    <variable name="CODE" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="KOTLIN" value="true" />
+    </context>
+  </template>
+  <template name="allowLocation" value="&lt;uses-permission android:name=&quot;android.permission.ACCESS_COARSE_LOCATION&quot;/&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.ACCESS_FINE_LOCATION&quot;/&gt;" description="Allow Location" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="allowReadWriteStorage" value="&lt;uses-permission android:name=&quot;android.permission.WRITE_EXTERNAL_STORAGE&quot; /&gt;&#10;&lt;uses-permission android:name=&quot;android.permission.READ_EXTERNAL_STORAGE&quot; /&gt;" description="Cấp quyền đọc ghi dữ liệu trên thiết bị" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
     </context>
   </template>
 </templateSet>
